@@ -3,6 +3,9 @@ name: Seasonal Update
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   update-seasonal:
     runs-on: ubuntu-latest
