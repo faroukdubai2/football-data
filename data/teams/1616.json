@@ -1,0 +1,34 @@
+{
+    "get": "teams",
+    "parameters": {
+        "id": "1616"
+    },
+    "errors": [],
+    "results": 1,
+    "paging": {
+        "current": 1,
+        "total": 1
+    },
+    "response": [
+        {
+            "team": {
+                "id": 1616,
+                "name": "Los Angeles FC",
+                "code": null,
+                "country": "USA",
+                "founded": 2014,
+                "national": false,
+                "logo": "https://media.api-sports.io/football/teams/1616.png"
+            },
+            "venue": {
+                "id": 19419,
+                "name": "BMO Stadium",
+                "address": "3939 S Figueroa Street",
+                "city": "Los Angeles, California",
+                "capacity": 22921,
+                "surface": "grass",
+                "image": "https://media.api-sports.io/football/venues/19419.png"
+            }
+        }
+    ]
+}
