@@ -9,7 +9,7 @@ class Settings:
     # API Keys & URLs
     API_KEY = os.getenv("FOOTBALL_API_KEY")
     BASE_URL = os.getenv("BASE_API_URL", "https://v3.football.api-sports.io")
-    GITHUB_BASE_URL = os.getenv("GITHUB_BASE_URL", "https://raw.githubusercontent.com/USER/REPO/main")
+    GITHUB_BASE_URL = os.getenv("BASE_URL", "https://raw.githubusercontent.com/USER/REPO/main")
 
     # Team & League Context
     TEAM_ID = int(os.getenv("TEAM_ID", 1616))  # LAFC
