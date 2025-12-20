@@ -1,0 +1,24 @@
+{
+    "get": "venues",
+    "parameters": {
+        "id": "19419"
+    },
+    "errors": [],
+    "results": 1,
+    "paging": {
+        "current": 1,
+        "total": 1
+    },
+    "response": [
+        {
+            "id": 19419,
+            "name": "BMO Stadium",
+            "address": "3939 S Figueroa Street",
+            "city": "Los Angeles, California",
+            "country": "USA",
+            "capacity": 22921,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/19419.png"
+        }
+    ]
+}
