@@ -27,7 +27,7 @@ Strict adherence to **100 requests/day**.
 | Workflow | Frequency | Est. Calls | Strategy |
 |----------|-----------|------------|----------|
 | **Daily** | Every 6 hours | ~8 / day | Fetches Fixtures List + Standings. |
-| **Live** | Every 5 mins (Match only) | ~50 / match | Checks local index. if Live, fetches Events/Stats. Stops if finished. |
+| **Live (Paused)** | Every 5 mins (Match only) | ~50 / match | Checks local index. if Live, fetches Events/Stats. Stops if finished. |
 | **Seasonal**| Manual | ~2 / run | Fetches Players (Squad) & Team Info. |
 | **Annual** | Manual | ~1 / run | Fetches Venues. |
 

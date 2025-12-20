@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+from datetime import datetime
 from dotenv import load_dotenv
 
 # Load environment variables
@@ -15,8 +16,8 @@ class Settings:
     TEAM_ID = int(os.getenv("TEAM_ID", 1616))  # LAFC
     LEAGUE_ID = int(os.getenv("LEAGUE_ID", 253))  # MLS
     
-    # We can probably fetch current season dynamically or hardcode for now as per prompt example "2025"
-    SEASON = 2025 
+    # Dynamic Season (Defaults to current year, adaptable via Env)
+    SEASON = int(os.getenv("SEASON", datetime.now().year)) 
 
     # Project Paths
     BASE_DIR = Path(__file__).resolve().parent.parent.parent

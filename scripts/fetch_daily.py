@@ -12,6 +12,7 @@ def main():
     # Fixtures
     fixtures_vm = FixturesViewModel()
     fixtures_vm.update_fixtures()
+    fixtures_vm.update_rounds()
     
     # Standings
     standings_vm = StandingsViewModel()

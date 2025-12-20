@@ -74,3 +74,29 @@ class LiveViewModel:
             lineups = FixturesAPI.get_lineups(fixture_id)
             if lineups:
                 JsonStore.save(lineups_path, lineups)
+
+        # 6. Fetch Players Statistics (Every ~20 mins or once at the end? Let's do similar to stats)
+        players_stats_path = settings.DATA_DIR / f"fixtures/players/statistics/{fixture_id}.json"
+        should_update_players = True
+        if players_stats_path.exists():
+            mtime = datetime.fromtimestamp(players_stats_path.stat().st_mtime, tz=timezone.utc)
+            if datetime.now(timezone.utc) - mtime < timedelta(minutes=19):
+                should_update_players = False
+        
+        if should_update_players:
+            print("Updating Players Statistics...")
+            players_stats = FixturesAPI.get_players_statistics(fixture_id)
+            if players_stats:
+                JsonStore.save(players_stats_path, players_stats)
+
+        # 7. Fetch Head To Head (Once)
+        home_id = active_match["teams"]["home"]["id"]
+        away_id = active_match["teams"]["away"]["id"]
+        h2h_id = f"{home_id}-{away_id}"
+        h2h_path = settings.DATA_DIR / f"fixtures/headtohead/{h2h_id}.json"
+        
+        if not h2h_path.exists():
+            print(f"Updating Head To Head for {h2h_id}...")
+            h2h = FixturesAPI.get_head_to_head(h2h_id)
+            if h2h:
+                JsonStore.save(h2h_path, h2h)
